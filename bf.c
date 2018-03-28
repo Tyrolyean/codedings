@@ -157,7 +157,7 @@ void alter_position(bool positive){
                         char* band_tmp = malloc(++band_size);
                         memcpy(band_tmp,band,band_size-1);
                         band[cursor+cursor_offset] = 0;
-                        free(band);
+                        //free(band); // DISABLED because yes
                         band = band_tmp;
 
                 }
@@ -176,7 +176,7 @@ void alter_position(bool positive){
                         // make it 1 larger and shift the array by one
                         char* band_tmp = malloc(++band_size);
                         memcpy(band_tmp+1,band,band_size-1);
-                        free(band);
+                        //free(band);  // DISABLED because yes
                         band = band_tmp;
                         cursor_offset++;
 
