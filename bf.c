@@ -117,6 +117,9 @@ int main(int argc, const char *argv[]){
                 case ']':
                         // Scan for my [
                         switch_brace_count = 1;
+                        if(band[cursor + cursor_offset] == 0){
+                                continue;
+                        }
                         for(int ii = i-1; ii >=0;ii--){
                                 
                                 if(text[ii] == '['){
@@ -157,7 +160,7 @@ void alter_position(bool positive){
                         char* band_tmp = malloc(++band_size);
                         memcpy(band_tmp,band,band_size-1);
                         band[cursor+cursor_offset] = 0;
-                        //free(band); // DISABLED because yes
+                        //free(band);
                         band = band_tmp;
 
                 }
@@ -176,7 +179,7 @@ void alter_position(bool positive){
                         // make it 1 larger and shift the array by one
                         char* band_tmp = malloc(++band_size);
                         memcpy(band_tmp+1,band,band_size-1);
-                        //free(band);  // DISABLED because yes
+                        //free(band);
                         band = band_tmp;
                         cursor_offset++;
 
